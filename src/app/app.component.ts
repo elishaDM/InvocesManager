@@ -15,7 +15,7 @@ export class AppComponent {
     }, error => console.error(error));
   }
 
-  title = 'InvocesManagerFront';
+  title = 'InvoicesManagerFront';
 }
 
 interface WeatherForecast {

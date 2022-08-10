@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "InvocesManagerFront", "InvocesManagerFront.esproj", "{7A02EE4F-C817-4DBA-95A8-AF4118D84EAE}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "InvoicesManagerFront", "InvoicesManagerFront.esproj", "{7A02EE4F-C817-4DBA-95A8-AF4118D84EAE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoicesManagerAPI", "..\InvocesManagerAPI\InvoicesManagerAPI.csproj", "{18F5E22C-BCD9-437E-AF55-BCDE0321701F}"
 EndProject
