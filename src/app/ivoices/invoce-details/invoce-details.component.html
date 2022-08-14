@@ -1,1 +1,16 @@
 <p>invoce-details works!</p>
+<div class="flex-container-main">
+  <mat-card class="header-card">
+    <mat-card-title>{{invoice.InvoiceNumber}}</mat-card-title>
+    <mat-card-content>
+      <!--- <p>Invoice: {{invoice.createdTime | date}}</p>
+   <p>Status: {{ invoice.Status | invoiceStatus}}</p>
+   <p>Amount: {{ invoice.Amount }}</p>
+   <p>Payment Method: {{ invoice.PaymentMethod | invoicePaymentMethod}}</p>
+    -->
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="onEdit()">EDIT</button>
+    </mat-card-actions>
+  </mat-card>
+  </div>

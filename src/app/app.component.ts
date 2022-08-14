@@ -18,7 +18,7 @@ export class AppComponent {
     // }, error => console.error(error));
     let page = new Page(1, 3);
     //console.dir(page)
-    //this.invoiceService.GetIvoicesPage({ pageIndex: 1, pageSize: 3 });
+    //this.invoiceService.GetinvoicesPage({ pageIndex: 1, pageSize: 3 });
   }
   
   title = 'InvoicesManagerFront';

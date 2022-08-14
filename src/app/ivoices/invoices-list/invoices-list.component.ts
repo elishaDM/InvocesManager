@@ -7,6 +7,7 @@ import { Invoice } from '../../_models/Invoice';
 import { InvoiceService } from '../../_services/invoice.service';
 import { InvoicesDataSource } from './invoicesDataSource';
 import { Sort } from '@angular/material/sort';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-invoices-list',
@@ -24,7 +25,7 @@ export class InvoicesListComponent implements OnInit, AfterViewInit {
   invoicestotalCount = 15;
     pageSize: number = 5;
 
-  constructor(private invoiceService: InvoiceService) {
+  constructor(private invoiceService: InvoiceService, private router: Router ) {
   }
 
   ngOnInit(): void {
@@ -69,6 +70,10 @@ export class InvoicesListComponent implements OnInit, AfterViewInit {
 
   onRowClicked(row: any) {
     console.log('Row clicked: ', row);
+    this.router.navigate(['/invoice-details/1']);
   }
 
+  addInvoice() {
+    this.router.navigate(['/invoice-details/1']);
+  }
 }

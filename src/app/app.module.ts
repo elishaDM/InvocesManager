@@ -14,6 +14,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { InvoiceStatusPipe } from './pipes/invoice-status.pipe';
 import { InvoicePaymentMethodPipe } from './pipes/invoice-payment-method.pipe';
+import { EditComponent } from './ivoices/edit/edit.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { InvoicePaymentMethodPipe } from './pipes/invoice-payment-method.pipe';
     InvoicesListComponent,
     InvoceDetailsComponent,
     InvoiceStatusPipe,
-    InvoicePaymentMethodPipe
+    InvoicePaymentMethodPipe,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { InvoicePaymentMethodPipe } from './pipes/invoice-payment-method.pipe';
     MatProgressSpinnerModule,
     MatInputModule,
     MatPaginatorModule, 
-    MatSortModule
+    MatSortModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

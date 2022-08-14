@@ -1,4 +1,7 @@
-
+<div class="addBtn">
+  <button mat-button>ADD Invoice</button>
+   <a mat-button (click)="addInvoice()">Link</a>
+</div>
 <div class="spinner-container" *ngIf="dataSource.loading$ | async">
   <mat-spinner></mat-spinner>
 </div>
