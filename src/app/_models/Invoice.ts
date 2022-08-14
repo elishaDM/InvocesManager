@@ -4,4 +4,5 @@ export class Invoice {
   Status?: number;
   Amount?: number;
   PaymentMethod?: number;
+  total?: number;
 }

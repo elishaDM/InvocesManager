@@ -17,7 +17,7 @@ export class AppComponent {
    //   this.forecasts = result;
     // }, error => console.error(error));
     let page = new Page(1, 3);
-    console.dir(page)
+    //console.dir(page)
     //this.invoiceService.GetIvoicesPage({ pageIndex: 1, pageSize: 3 });
   }
   

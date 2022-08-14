@@ -1,0 +1,46 @@
+
+<div class="spinner-container" *ngIf="dataSource.loading$ | async">
+  <mat-spinner></mat-spinner>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+       matSort matSortActive="InvoiceNumber" matSortDirection="asc" matSortDisableClear
+       (matSortChange)="sortData($event)" #invoicesTable>
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+  <!-- createdTime Column -->
+  <ng-container matColumnDef="createdTime">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Created </th>
+    <td mat-cell *matCellDef="let element"> {{element.createdTime | date}} </td>
+  </ng-container>
+
+  <!-- InvoiceNumber Column -->
+  <ng-container matColumnDef="InvoiceNumber">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Invoice Number </th>
+    <td mat-cell *matCellDef="let element"> {{element.invoiceNumber}} </td>
+  </ng-container>
+
+  <!-- Status Column -->
+  <ng-container matColumnDef="Status">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+
+  <!-- Amount Column -->
+  <ng-container matColumnDef="Amount">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount </th>
+    <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+  </ng-container>
+
+  <!-- PaymentMethod Column -->
+  <ng-container matColumnDef="PaymentMethod">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> PaymentMethod </th>
+    <td mat-cell *matCellDef="let element"> {{element.paymentMethod}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [length]="dataSource.totalSubject | async" [pageSize]="pageSize"
+               [pageSizeOptions]="[3, 5, 10]"></mat-paginator>
+
