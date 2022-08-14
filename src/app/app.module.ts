@@ -12,13 +12,17 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { InvoiceStatusPipe } from './pipes/invoice-status.pipe';
+import { InvoicePaymentMethodPipe } from './pipes/invoice-payment-method.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     InvoicesListComponent,
-    InvoceDetailsComponent
+    InvoceDetailsComponent,
+    InvoiceStatusPipe,
+    InvoicePaymentMethodPipe
   ],
   imports: [
     BrowserModule,

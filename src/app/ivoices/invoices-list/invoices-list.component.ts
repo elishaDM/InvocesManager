@@ -67,4 +67,8 @@ export class InvoicesListComponent implements OnInit, AfterViewInit {
       this.paginator.pageSize);
   }
 
+  onRowClicked(row: any) {
+    console.log('Row clicked: ', row);
+  }
+
 }
