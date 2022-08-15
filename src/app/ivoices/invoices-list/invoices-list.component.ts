@@ -70,7 +70,8 @@ export class InvoicesListComponent implements OnInit, AfterViewInit {
 
   onRowClicked(row: any) {
     console.log('Row clicked: ', row);
-    this.router.navigate(['/invoice-details/1']);
+    this.invoiceService.currentInvoice = { id: row.id, InvoiceNumber: row.invoiceNumber }
+    this.router.navigate(['/invoice-details/'+row.id]);
   }
 
   addInvoice() {

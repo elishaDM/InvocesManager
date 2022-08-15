@@ -16,6 +16,8 @@ export class InvoceDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.invoice = this.invocesService.currentInvoice;
+    console.dir(this.invoice);
   }
 
   onEdit() {

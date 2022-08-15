@@ -12,6 +12,7 @@ export class InvoiceService {
   private _invoices: Invoice[] = [];
   public totalInvoices? = 0;
   public CurrentInvoicesSubject: BehaviorSubject<Invoice[]>;
+  currentInvoice: Invoice = new Invoice();
 
   constructor(private http: HttpClient) {
     this.CurrentInvoicesSubject = new BehaviorSubject<Invoice[]>([]);
@@ -22,7 +23,7 @@ export class InvoiceService {
     sortColumn: string = 'InvoiceNumber',
     sortDirection: string = 'desc',
     pageIndex = 0, pageSize = 5): Observable<Invoice[]> {
-    //let size: any = page?.size;
+    
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       params: new HttpParams()
@@ -36,8 +37,12 @@ export class InvoiceService {
     return this.http.get<Invoice[]>(`${environment.apiUrl}/invoices/invoices`,
       httpOptions)
       .pipe(
-        tap(x => this.totalInvoices = x[0]?.total),
-      //  map(x => { return <Invoice[]>x.Invoices })
+        //instead additional property that makes returned obejct too complicated, I put the total count
+        //in the first item of returned invoices- we need it for paginator
+        tap(x => {
+          this.CurrentInvoicesSubject.next(x);
+          this.totalInvoices = x[0]?.total;
+        }),
       );
 
   }
@@ -45,4 +50,5 @@ export class InvoiceService {
   public get CurrentInvoices(): Invoice[] {
     return this.CurrentInvoicesSubject.value;
   }
+
 }
